@@ -103,7 +103,7 @@ The "Sentinel" engine. A heuristic EDR that monitors the OS process table for In
 CRITICAL ALERT 
     TIME:       2026-04-19 21:40:59
     ENTITY:     python.exe (PID: 26156)
-    USER:       CYPHERNOVA\samya
+    USER:       user
     CONFIDENCE: 100%
     INDICATORS: Suspicious Process Signature/Obfuscator Detected, Active Handle on Audit Artifacts
     COMMAND:    C:\Python313\python.exe auditor.py
