@@ -1,0 +1,11 @@
+# Sensitive keys and data
+secret.key
+encrypted_audit.log
+edr_alerts.json
+decrypted_audit.txt
+
+# Python environment and cache
+__pycache__/
+*.pyc
+.venv/
+.env
