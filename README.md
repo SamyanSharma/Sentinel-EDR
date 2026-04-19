@@ -138,7 +138,7 @@ Comparing lists is an $O(N^2)$ operation. By converting our target files and the
 
 1.  **Clone and Install:**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/Sentinel-EDR.git
+    git clone https://github.com/SamyanSharma/Sentinel-EDR.git
     cd Sentinel-EDR
     pip install -r requirements.txt
     ```
