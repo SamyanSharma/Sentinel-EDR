@@ -29,12 +29,12 @@ This software captures keystrokes and monitors system processes. Capturing data 
 
 ---
 
-## 💼 Resume Highlights
+## 💼 What I Learned
 * Designed a multi-threaded producer-consumer system for real-time input processing.
 * Implemented AES-256 encryption with integrity verification (HMAC).
 * Built a heuristic EDR engine with regex-based detection and OS-level telemetry.
 * Developed SIEM-compatible forensic reporting tools.
-* Leveraged O(1) set intersection and lazy evaluation to significantly reduce monitoring overhead.
+* Leveraged O(min(n, m)) set intersection and lazy evaluation to significantly reduce monitoring overhead.
 
 ---
 
@@ -78,7 +78,7 @@ sentinel-edr/
 
 ### 🔹 The Auditor (`auditor.py`)
 The "Collector" agent. It utilizes a producer-consumer multithreading model to ensure zero input lag.
-* **O(1) Byte Tracking:** Efficiently monitors memory buffer size incrementally to trigger writes without re-scanning the list.
+* **O(min(n, m)) Byte Tracking:** Efficiently monitors memory buffer size incrementally to trigger writes without re-scanning the list.
 * **Resilient I/O:** Background worker with a `queue.Queue` prevents disk lag during high-speed typing.
 * **Log Rotation:** Automatically archives logs at 5MB intervals to prevent storage exhaustion.
 
@@ -127,7 +127,7 @@ Calling `proc.open_files()` on every process every 5 seconds is incredibly CPU-i
 
 <details>
 <summary><b>3. Why Set Intersection for Detection?</b></summary>
-Comparing lists is an $O(N^2)$ operation. By converting our target files and the process's open file handles to Python sets, I utilized the set intersection operator (`&`) to achieve $O(1)$ lookup speeds. This significantly reduced the EDR overhead during the 5-second monitoring loop.
+Comparing raw lists requires a nested loop, which is an $O(N^2)$ operation. By converting our target files and the process's open file handles to Python sets, membership lookup drops from $O(N)$ per check to an average of $O(1)$. This allows the set intersection operator (`&`) to run in $O(\min(n, m))$ time, avoiding the $O(N^2)$ nested comparison trap and significantly reducing EDR overhead during the 5-second monitoring loop.
 </details>
 
 ---
@@ -177,7 +177,7 @@ Comparing lists is an $O(N^2)$ operation. By converting our target files and the
 
 ## 🤝 Contributing & Status
 * **Status:** Stable. Maintained strictly for educational purposes and portfolio demonstration.
-* **Contributing:** Not accepting external pull requests – this is a personal educational project.
+* **Contributing:** This repository is maintained as an academic portfolio piece. Issues and feedback are welcome, but PRs are not expected.
 * **Acknowledgments:** This project was built as the Final Project for Harvard University's CS50x.
 
 ---
