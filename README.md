@@ -113,7 +113,7 @@ CRITICAL ALERT
 
 ---
 
-## 🧠 Design Decisions (CS50 Requirement)
+## 🧠 Design Decisions
 
 <details>
 <summary><b>1. Why a Producer-Consumer Model?</b></summary>
