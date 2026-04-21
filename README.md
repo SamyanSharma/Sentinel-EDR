@@ -183,4 +183,4 @@ Comparing raw lists requires a nested loop, which is an $O(N^2)$ operation. By c
 ---
 
 ## 📄 License
-Distributed under the MIT License. See [`LICENSE`](LICENSE.md) file for details.
+Distributed under the MIT License. See [`LICENSE`](LICENSE) file for details.
