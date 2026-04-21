@@ -1,9 +1,9 @@
 # 🛡️ Sentinel-EDR: Advanced Endpoint Detection & Auditing Suite
 > Built with Python | Multi-threaded | Secure logging | Heuristic detection
 
-![Python Version](https://img.shields.io/badge/python-3.9%2B-blue) 
-![License](https://img.shields.io/badge/license-MIT-green) 
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey) 
+![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 ![Status](https://img.shields.io/badge/status-stable-brightgreen)
 
 ### 🎥 Video Demo: https://www.youtube.com/watch?v=wNZo4s3g54o
@@ -100,7 +100,7 @@ The "Sentinel" engine. A heuristic EDR that monitors the OS process table for In
 <summary><b>View Sample EDR Alert</b></summary>
 
 ```text
-CRITICAL ALERT 
+CRITICAL ALERT
     TIME:       2026-04-19 21:40:59
     ENTITY:     python.exe (PID: 26156)
     USER:       user
@@ -155,10 +155,10 @@ Comparing raw lists requires a nested loop, which is an $O(N^2)$ operation. By c
     ```bash
     # Terminal 2 (Offense): Start the Auditor to simulate monitored activity
     python auditor.py
-    
+
     # After typing, simply Kill/Close the Terminal 2 window. Due to the global nature of hardware hooks in virtualized environments (like VS Code), standard signals like Ctrl+C may be suppressed
     ```
-    
+
     *Type a few keystrokes before stopping the Auditor. You will instantly see the Detector in Terminal 1 flag the Auditor based on its Regex signature and active file handles.*
 
     ```bash
